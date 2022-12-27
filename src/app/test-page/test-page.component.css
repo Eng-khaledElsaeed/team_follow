@@ -1,0 +1,76 @@
+.page-container{
+display: flex;
+height: 100%;
+background: rgb(35, 42, 58);
+}
+.page-container .sidebar{
+    height: 100%;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.list-items{
+    padding-top: 10px;
+}
+.sidebar .list-item{
+    font-size: 20px;
+    padding:10px 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 15px 0;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+.list-items h5{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 20px;
+    padding: 5px;
+    border-bottom: 2px solid pink;
+}
+
+.list-item i{
+    margin-right: 5px;
+}
+.list-item.selected{
+    transform: translateX(25px);
+    position: relative;
+}
+.list-item.selected::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-left: 10px solid pink;
+}
+.list-item.selected:hover::before{
+    content:" ";
+    width: 0;
+    height: 0;
+}
+.list-item::before{
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 5px;
+    background: pink;
+    left: 5px;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: all .3s;
+}
+.list-item:hover::before{
+    opacity: 1;
+    transform: scaleY(1);
+    height: 100%;
+}
+.page-content{
+    width: 100%;
+}
